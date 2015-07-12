@@ -1,1 +1,2 @@
-au BufRead,BufNewFile *.vlb set filetype=vlb
+au BufRead,BufNewFile *.vlb set filetype=VLB
+
