@@ -1,5 +1,5 @@
 "Vim syntax file
-" Language: VLB
+"Language: VLB
 
 if version < 600
   syntax clear
@@ -9,13 +9,13 @@ endif
 
 syn case ignore 
 syn region vlbLineComment start=/rem/ end=/$/
-syn keyword vlbRepeat for 
-syn keyword vlbConditional if endif then else 
-syn keyword vlbStatement goto gosub return end loabel
+syn keyword vlbRepeat for to 
+syn keyword vlbConditional if endif then else next
+syn keyword vlbStatement goto gosub return end label 
 syn keyword vlbKeyword wait 
 syn keyword vlbStructure dim 
 
-syn region vlbString			start=+"+ end=+"+	oneline
+syn region vlbString		start=+"+ end=+"+	oneline
 syn match vlbNumber			"\<\d\+[ij]\=\>"
 syn match vlbFloat			"\<\d\+\(\.\d*\)\=\([edED][-+]\=\d\+\)\=[ij]\=\>"
 
@@ -28,21 +28,16 @@ if version >= 508 || !exists("did_vlb_syntax_inits")
     command -nargs=+ HiLink hi def link <args>
   endif
 
-  HiLink vlbOperator			Operator
   HiLink vlbFloat			Float
   HiLink vlbStructure Structure
   HiLink vlbFunction			Function
-  HiLink vlbLineContinuation		Special
-  HiLink vlbLabel			Label
   HiLink vlbConditional		Conditional
   HiLink vlbRepeat			Repeat
   HiLink vlbString			String
-  HiLink vlbDelimiter		Identifier
-  HiLink vlbTransposeOther		Identifier
   HiLink vlbNumber			Number
   HiLink vlbError			Error
   HiLink vlbStatement		Statement
-  HiLink vlbComment			Comment
+  HiLink vlbLineComment			Comment
 
   delcommand HiLink
 endif
