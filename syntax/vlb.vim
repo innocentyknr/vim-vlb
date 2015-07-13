@@ -20,6 +20,7 @@ syn match vlbNumber			"\<\d\+[ij]\=\>"
 syn match vlbFloat			"\<\d\+\(\.\d*\)\=\([edED][-+]\=\d\+\)\=[ij]\=\>"
 
 
+
 if version >= 508 || !exists("did_vlb_syntax_inits")
   if version < 508
     let did_vlb_syntax_inits = 1
