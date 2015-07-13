@@ -1,0 +1,31 @@
+snippet     if
+abbr        if then endif
+options     head
+    if ${1:#:condition} then
+        ${0:TARGET}
+    endif
+snippet    IF 
+options     head
+    IF ${1:#:condition} THEN
+        ${0:TARGET}
+    ENDIF
+snippet     for
+options     head
+    for ${1:#:var}=${2:#:start} to ${3:#:end}
+        ${0:TARGET}  
+    next
+snippet     FOR
+options     head
+    FOR ${1:#:var}=${2:#:start} TO ${3:#:end}
+        ${0:TARGET}  
+    NEXT
+snippet    loop 
+options head
+   label ${1:#name} 
+        ${0:TARGET}
+   goto  $1
+snippet   LOOP 
+options head
+   LABEL ${1:#name} 
+   GOTO $1
+
