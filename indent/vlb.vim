@@ -32,5 +32,4 @@ function! GetVLBIndent()
 endfunction
 
 let b:did_indent = 1
-
 " _END_
