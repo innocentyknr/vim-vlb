@@ -8,12 +8,15 @@ elseif exists("b:current_syntax")
 endif
 
 syn case ignore 
+setlocal iskeyword+=$
 syn region vlbLineComment start=/rem/ end=/$/
 syn keyword vlbRepeat for to 
 syn keyword vlbConditional if endif then else next
-syn keyword vlbStatement goto gosub return end label 
-syn keyword vlbKeyword wait 
-syn keyword vlbStructure dim 
+syn keyword vlbStatement goto gosub return end label on 
+syn keyword vlbFunction exp log sin asin cos acos tan atan int frac abs ran sgn max min sqr sqrt mod hex$ dec euler val str$ time$ dtime$ date$ left$ right$ mid$ len instr$ lower$ upper$ print input bell inkey$ inkey2$ cls locate open close mouseb mouseb2 mousex mousey window image line text dot circlef circle box boxf gcolor bcolor read restore
+syn keyword vlbOperator and or not
+syn keyword vlbKeyword wait pi 
+syn keyword vlbStructure dim data  
 
 syn region vlbString		start=+"+ end=+"+	oneline
 syn match vlbNumber			"\<\d\+[ij]\=\>"
@@ -36,7 +39,6 @@ if version >= 508 || !exists("did_vlb_syntax_inits")
   HiLink vlbRepeat			Repeat
   HiLink vlbString			String
   HiLink vlbNumber			Number
-  HiLink vlbError			Error
   HiLink vlbStatement		Statement
   HiLink vlbLineComment			Comment
 
