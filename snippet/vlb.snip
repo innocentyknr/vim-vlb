@@ -4,7 +4,24 @@ options     head
     if ${1:#:condition} then
         ${0:TARGET}
     endif
+snippet     ifelse
+abbr        if then else endif
+options     head
+    if ${1:#:condition} then
+        ${2:TARGET}
+    else
+        ${3}
+    endif
+snippet     IFELSE 
+abbr        if then else endif
+options     head
+    IF ${1:#:condition} THEN 
+        ${2:TARGET}
+    ELSE 
+        ${3}
+    ENDIF 
 snippet    IF 
+abbr        IF THEN ENIF
 options     head
     IF ${1:#:condition} THEN
         ${0:TARGET}
@@ -28,4 +45,35 @@ snippet   LOOP
 options head
    LABEL ${1:#name} 
    GOTO $1
-
+snippet     open window 
+abbr        open window
+options     head
+    open window ${1:#:width},${2:#:hight}
+snippet     open with title
+abbr        open window with title
+options     head
+    open window ${1:#:width},${2:#:hight},${3:#:title}
+snippet     draw image 
+abbr        draw image
+options     head
+    draw image ${1:#:image number}
+snippet     draw image xy 
+abbr        draw x,y image
+options     head
+    draw ${1:#:x},${2:#:y} image ${3:#:image number}
+snippet     draw to
+abbr        draw x,y to x,y image
+options     head
+    draw ${1:#:x1},${2:#:y1} to ${3:#:x2},${4:#:y2} image ${5:#:image number}
+snippet     create image
+abbr        create image
+options     head
+    create image ${1:#:image number},${2:#:image file name}
+snippet     create w h image 
+abbr        create <width> <hight> image 
+options     head
+    create ${1:#:width} ${2:#:hight} image ${3:#:image number}
+snippet     create image to
+abbr        create x1,y1 to x2,y2 image
+options     head
+    create ${1:#:x1},${2:#:y1} to ${3:#:x2},${4:#:y2} image ${5:#:image number}
